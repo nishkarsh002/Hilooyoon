@@ -52,11 +52,11 @@ export default function ProductGridSection({ products }: { products: Product[] }
                   {categoryMap[category].length !== 1 ? "s" : ""}
                 </span>
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                 {categoryMap[category].map((product) => (
                   <ProductCard key={product.id} product={product} />
                 ))}
-              </div>
+              </div> */}
             </div>
           ))}
         </div>

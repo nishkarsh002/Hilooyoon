@@ -27,7 +27,7 @@ export default function FeaturedProductsSection() {
         </div>
 
         {/* Skiper49 — Inverted Perspective Carousel */}
-        <Skiper49 />
+        {/* <Skiper49 /> */}
 
         {/* Mobile view all */}
         <div className="mt-4 sm:hidden text-center">

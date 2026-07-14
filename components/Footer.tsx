@@ -11,17 +11,17 @@ const NAV_LINKS = [
 export default function Footer() {
   return (
     <footer className="bg-[var(--foreground)] text-white">
-      <div className="mx-auto max-w-7xl px-4 sm:px-8 py-14">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+      <div className="mx-auto max-w-7xl px-6 sm:px-8 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr_1fr] gap-8 md:gap-12">
           {/* Brand */}
           <div>
             <Link href="/" className="inline-block mb-4">
               <Image
                 src="/imgs/image.png"
                 alt="hilooyoon"
-                width={140}
-                height={44}
-                className="object-contain h-10 w-auto"
+                width={160}
+                height={52}
+                className="h-12 w-auto object-contain"
                 style={{ mixBlendMode: "screen" }}
               />
             </Link>
@@ -76,7 +76,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 pt-6 border-t border-neutral-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="mt-8 pt-4 border-t border-neutral-800 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-neutral-500">
             &copy; {new Date().getFullYear()} hilooyoon. All rights reserved.
           </p>
