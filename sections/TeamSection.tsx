@@ -1,4 +1,5 @@
 import Image from "next/image"
+import { Skiper16 } from "@/components/ui/skiper-ui/skiper16"
 
 const team = [
   {
@@ -35,8 +36,7 @@ export default function TeamSection() {
           </p>
         </div>
 
-        {/* Team cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-3xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-3xl mx-auto mt-16">
           {team.map((member) => (
             <div
               key={member.name}
@@ -66,6 +66,14 @@ export default function TeamSection() {
             </div>
           ))}
         </div>
+
+        {/* Team Showcase - Skiper16 */}
+        {/* <div>
+          <Skiper16 />
+        </div> */}
+
+        {/* Team cards */}
+        
       </div>
     </section>
   )

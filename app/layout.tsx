@@ -16,6 +16,12 @@ export const metadata: Metadata = {
     description: "Premium wholesale clothing for businesses and distributors.",
     type: "website",
   },
+  icons: {
+    icon: "/imgs/favicon_io%20(4)/favicon.ico",
+    shortcut: "/imgs/favicon_io%20(4)/favicon.ico",
+    apple: "/imgs/favicon_io%20(4)/apple-touch-icon.png",
+  },
+  manifest: "/site.webmanifest",
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
