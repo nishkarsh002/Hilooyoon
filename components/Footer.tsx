@@ -66,76 +66,47 @@ export default function Footer() {
   return (
     <footer className="bg-[var(--foreground)] text-white">
       <div className="mx-auto max-w-7xl px-6 sm:px-8 py-10">
-        <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr_1fr] gap-8 md:gap-12">
-          {/* Brand */}
-          <div>
-            <Link href="/" className="inline-block mb-4">
+        <div className="flex flex-col items-center justify-between gap-8 md:flex-row">
+          <Link href="/" aria-label="hillyoon home" className="flex items-center shrink-0 gap-3">
+            <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white shadow-sm shadow-black/5">
               <Image
-                src="/imgs/logo-bg.png"
-                alt="hillyoon"
-                width={260}
-                height={90}
-                className="h-20 w-auto object-contain"
+                src="/imgs/favicon_io (4)/favicon-32x32.png"
+                alt="hillyoon favicon"
+                width={32}
+                height={32}
+                className="rounded-lg"
               />
-            </Link>
-            <p className="text-sm text-neutral-400 leading-relaxed max-w-sm mb-5">
-              Premium Apparel Manufacturing &amp; Global Export Company.
-            </p>
-            {/* Social links */}
-            <div className="flex items-center gap-3">
-              {SOCIAL_LINKS.map(({ label, href, icon }) => (
-                <a
-                  key={label}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={label}
-                  className="w-9 h-9 rounded-full border border-neutral-700 flex items-center justify-center text-neutral-400 hover:border-[#c8a96e] hover:text-[#c8a96e] transition-colors duration-200"
-                >
-                  {icon}
-                </a>
-              ))}
             </div>
-          </div>
+            <span className="text-2xl font-black tracking-widest text-[#c8a96e] sm:text-3xl">
+              HILLYOON
+            </span>
+          </Link>
 
-          {/* Navigation */}
-          <div>
-            <h3 className="text-xs uppercase tracking-widest text-neutral-500 mb-4 font-semibold">
-              Navigation
-            </h3>
-            <ul className="space-y-2.5">
+          <nav aria-label="Footer navigation">
+            <ul className="flex flex-wrap justify-center gap-x-6 gap-y-3">
               {NAV_LINKS.map(({ label, href }) => (
                 <li key={href}>
-                  <Link href={href} className="text-sm text-neutral-300 hover:text-[#c8a96e] transition-colors duration-200">
+                  <Link href={href} className="text-sm font-medium text-neutral-300 transition-colors hover:text-[#c8a96e]">
                     {label}
                   </Link>
                 </li>
               ))}
             </ul>
-          </div>
+          </nav>
 
-          {/* Contact */}
-          <div>
-            <h3 className="text-xs uppercase tracking-widest text-neutral-500 mb-4 font-semibold">
-              Get in Touch
-            </h3>
-            <ul className="space-y-2.5 text-sm text-neutral-300">
-              <li>
-                <a href="mailto:info@hillyoonexports.com" className="hover:text-[#c8a96e] transition-colors duration-200">
-                  info@hillyoonexports.com
-                </a>
-              </li>
-              <li>
-                <a href="tel:+919718994500" className="hover:text-[#c8a96e] transition-colors duration-200">
-                  +91 97189 94500
-                </a>
-              </li>
-              <li>
-                <a href="https://www.hillyoon.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#c8a96e] transition-colors duration-200">
-                  www.hillyoon.com
-                </a>
-              </li>
-            </ul>
+          <div className="flex items-center gap-3">
+            {SOCIAL_LINKS.map(({ label, href, icon }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={label}
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-neutral-700 text-neutral-300 transition-colors hover:border-[#c8a96e] hover:text-[#c8a96e]"
+              >
+                {icon}
+              </a>
+            ))}
           </div>
         </div>
 
@@ -143,7 +114,7 @@ export default function Footer() {
           <p className="text-xs text-neutral-500">
             &copy; {new Date().getFullYear()} Hillyoon Exports. All rights reserved.
           </p>
-          <p className="text-xs text-neutral-600 italic">"Crafting Quality Apparel for Global Markets."</p>
+          <p className="text-xs text-neutral-600 italic">Crafting Quality Apparel for Global Markets.</p>
         </div>
       </div>
     </footer>
