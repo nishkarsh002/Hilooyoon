@@ -1,12 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
-
-const NAV_LINKS = [
-  { label: "Home", href: "/" },
-  { label: "About Us", href: "/about" },
-  { label: "Products", href: "/products" },
-  { label: "Contact Us", href: "/contact" },
-]
+import { contactInfo } from "@/data/company"
 
 const SOCIAL_LINKS = [
   {
@@ -66,48 +60,47 @@ export default function Footer() {
   return (
     <footer className="bg-[var(--foreground)] text-white">
       <div className="mx-auto max-w-7xl px-6 sm:px-8 py-10">
-        <div className="flex flex-col items-center justify-between gap-8 md:flex-row">
-          <Link href="/" aria-label="hillyoon home" className="flex items-center shrink-0 gap-3">
-            <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white shadow-sm shadow-black/5">
-              <Image
-                src="/imgs/favicon_io (4)/favicon-32x32.png"
-                alt="hillyoon favicon"
-                width={32}
-                height={32}
-                className="rounded-lg"
-              />
-            </div>
-            <span className="text-2xl font-black tracking-widest text-[#c8a96e] sm:text-3xl">
-              HILLYOON
-            </span>
-          </Link>
+        <div className="flex flex-col justify-between gap-8 sm:flex-row sm:items-end">
+          <div className="flex flex-col items-center gap-4 sm:items-start">
+            <Link href="/" aria-label="hillyoon home" className="flex items-center gap-3">
+              <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white shadow-sm shadow-black/5">
+                <Image
+                  src="/imgs/favicon_io (4)/favicon-32x32.png"
+                  alt="hillyoon favicon"
+                  width={32}
+                  height={32}
+                  className="rounded-lg"
+                />
+              </div>
+              <span className="text-2xl font-black tracking-[0.2em] text-[#c8a96e] sm:text-3xl">
+                HILLYOON
+              </span>
+            </Link>
 
-          <nav aria-label="Footer navigation">
-            <ul className="flex flex-wrap justify-center gap-x-6 gap-y-3">
-              {NAV_LINKS.map(({ label, href }) => (
-                <li key={href}>
-                  <Link href={href} className="text-sm font-medium text-neutral-300 transition-colors hover:text-[#c8a96e]">
-                    {label}
-                  </Link>
-                </li>
+            <div className="flex items-center gap-3">
+              {SOCIAL_LINKS.map(({ label, href, icon }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={label}
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-neutral-700 text-neutral-300 transition-colors hover:border-[#c8a96e] hover:text-[#c8a96e]"
+                >
+                  {icon}
+                </a>
               ))}
-            </ul>
-          </nav>
-
-          <div className="flex items-center gap-3">
-            {SOCIAL_LINKS.map(({ label, href, icon }) => (
-              <a
-                key={label}
-                href={href}
-                target="_blank"
-                rel="noreferrer"
-                aria-label={label}
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-neutral-700 text-neutral-300 transition-colors hover:border-[#c8a96e] hover:text-[#c8a96e]"
-              >
-                {icon}
-              </a>
-            ))}
+            </div>
           </div>
+
+          <address className="flex flex-col items-center gap-2 text-sm not-italic sm:items-end">
+            <a href={`mailto:${contactInfo.email}`} className="text-neutral-300 transition-colors hover:text-[#c8a96e]">
+              {contactInfo.email}
+            </a>
+            <a href="tel:+919718994500" className="text-neutral-300 transition-colors hover:text-[#c8a96e]">
+              {contactInfo.phone}
+            </a>
+          </address>
         </div>
 
         <div className="mt-8 pt-4 border-t border-neutral-800 flex flex-col sm:flex-row items-center justify-between gap-4">
